@@ -1,0 +1,16 @@
+.black{
+    background-color: black;
+    width: 10px;
+    height: 10px;
+}
+.white{
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    }
+.wrapper{
+    
+}
+.line-div{
+    display: flex;
+}
