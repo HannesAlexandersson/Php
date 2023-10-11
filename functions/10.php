@@ -21,15 +21,14 @@ $emojis = [
     }
     return $found;*/
 function searchEmojis ($query, $array){
-   $arr2 = [];
-   foreach ( $array as $key => $value){
-        if (preg_grep('/'.$query.'(\w+)/',$array)){
-            $arr2 = $value;
+    $found = [];
+    foreach ( $array as $string => $emoji) {
+        
+        if ( strpos( $string, $query ) !== false ) {
+            $found[] = $emoji;
         }
     }
-    
-
-return $arr2;
+    return $found;
 }
 
 print_r(searchEmojis('thumb', $emojis)); // Array ( [0] => 👎 [1] => 👍 )
