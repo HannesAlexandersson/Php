@@ -15,24 +15,6 @@ $episodes = [
 ];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function filterEpisodes(array $episode):bool {
     // kolla om timestampen är samma som 2015
     return date('Y', $episode['released_at']) == '2015';
@@ -45,3 +27,7 @@ print_r(array_filter($episodes, 'filterEpisodes'));
 /* foreach ($episodes2015 as $episode) {
     echo $episode['title'] . ' was released in '.$episode['released_at'];
 } */
+
+
+
+    
