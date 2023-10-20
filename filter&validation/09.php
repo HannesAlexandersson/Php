@@ -8,11 +8,16 @@ $quotes = [
     ['character' => 'Marylin Delpy', 'quote' => 'You\'re not an asshole, Mark. You\'re just trying so hard to be.'],
 ];
 if (isset($_POST['character'],$_POST['quote'])){    
+    if ($_POST['character'] === '') {
+        $error = 'Holy guacemoly! The character field is empty!';
+        array_push($errors,$error);
+    }elseif($_POST['quote'] === ''){
+        $error = 'Holy guacemoly! The character field is empty!';
+        array_push($errors,$error);
+    }else {
     array_push($quotes,$_POST);  
+    }
 }
-
-// TODO: Implement the adding new quotes logic here.//in function.php the function are
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,17 +34,14 @@ if (isset($_POST['character'],$_POST['quote'])){
         <div class="row mt-4">
             <div class="col-lg-8 offset-lg-2">
                 <h1 class="h5">Quotes</h1>
-                <!-- TODO: Implement the quotes list here. -->
                 <?php getQuotes($quotes); ?>
             </div>
         </div>
 
         <div class="row">
-            <form class="col-lg-8 offset-lg-2" action="08.php" method="post">
-                <hr>
-                <!-- TODO: Implement the errors list here. -->
-                
-
+            <form class="col-lg-8 offset-lg-2" action="09.php" method="post">
+                <hr>               
+                <?php getErrors($errors); ?>
                 <div class="mb-3">
                     <label for="character" class="form-label">Character</label>
                     <input type="text" name="character" id="character" class="form-control" placeholder="Sean Parker">

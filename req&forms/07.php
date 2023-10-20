@@ -10,7 +10,7 @@ $comments = [
 if (isset($_POST['name'],$_POST['message'])){
     $name = $_POST['name'];
     $message = $_POST['message'];
-    //array_push($comments,$_POST);  
+    array_push($comments,$_POST);  
     //$comments[] = $_POST;
     //array_push($comments,['name' => $_POST['name'], 'message' => $_POST['message']]);  
  }
