@@ -1,24 +1,32 @@
 <?php
 $dir = 'recources/files';
 $files = scandir($dir);
-if (isset($_POST['mulder.txt'],$_POST['dana-scully.txt'])){
-    $name = $_POST[$file];
-     $data = file_get_contents('recources/files/'.$name);
-     echo $data;
- }
- var_dump($data);
- 
-
 ?>
-<form action="" method="post"><?php
-foreach($files as $key => $file){
-    if ( str_contains($file,'.txt') !== false ){?> 
-    <label for="<?=$file?>"><?=$file?></label><button type="submit" name="<?=$file?>" value="<?=$file?>">Select File</button><br><?php
-    }
-}?>
-</form><?php
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-09</title>
+    <link rel="Stylesheet" href="style.css">
+</head>
 
+<body>
+<right>
+    <ul id="nav"><?php
+    foreach($files as $key => $file){
+        if ( str_contains($file,'.txt') !== false ){?> 
+    <li><a href="recources/files/<?=$file?>" target="if1"><?=$file?></a></li><br><?php    
+        }
+    }?>
+    </ul>
+</right>
+<left>
+    <iFrame name="if1"></iframe">
+</left>
+</body>
+<?php
 /*
  Continue working on the previous exercise. Exclude any file in the list which doesn't have the txt file extension. 
  The files in the list should be clickable. When the user clicks on a filename the content of that text file should be 
