@@ -10,4 +10,22 @@ $user = [
 
 $password = 'username-is-password';
 
-// TODO: Implement the login logic here.
+
+if (password_verify($password, $user['password'])){
+    echo 'Welcome, Bertram Gilfoyle!';
+}else{
+    echo 'Whoops. Looks like you missed something. Please try again.';
+}
+
+/*
+There are great tools available in the PHP framework to work with and build login systems. 
+Using the password_verify function, validate the $password variable against the password 
+item in the $user array. If passwords match, print the following text:
+
+Welcome, Bertram Gilfoyle!
+If the passwords doesn't match, print the following text:
+
+Whoops. Looks like you missed something. Please try again.
+Try setting the $password variable to something else to test the conditionals.
+
+*/
