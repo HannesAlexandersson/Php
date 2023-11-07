@@ -1,6 +1,6 @@
 <?php
 $db = new PDO("sqlite:startrek.db");
-$statement = $db->query("SELECT * FROM characters WHERE id = 1");
+$statement = $db->query("SELECT * FROM characters ORDER BY name ASC LIMIT 5");
 $characters = $statement->fetchAll();
 ?>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ $characters = $statement->fetchAll();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDO Introduction</title>
+    <title>02</title>
 </head>
 
 <body>
