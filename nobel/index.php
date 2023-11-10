@@ -1,12 +1,16 @@
 <?php
+/*
+SELECT DISTINCT awarding_board.name, year.year FROM awarding_board INNER JOIN AwardingBoard_Category_Year ON awarding_board.id = "AwardingBoard_Category_Year".awarding_board INNER JOIN year ON "AwardingBoard_Category_Year"."year" = "year".id WHERE year.id = 183;
+
+*/
 if (isset($_POST['search'])) {
     $search = trim($_POST['search']);
     $keywordToSearch = '%' .$search. '%';
     $db = new PDO('sqlite:nobel.db');
-    $statement = $db->prepare('SELECT * FROM movies WHERE title LIKE :search');
+    $statement = $db->prepare('SELECT * FROM year WHERE year.year = :search');
     $statement->bindParam(':search', $keywordToSearch);
     $statement->execute();
-    $movies = $statement->fetchAll();
+    $years = $statement->fetchAll();
 }
 ?>
 <!DOCTYPE html>
@@ -23,14 +27,14 @@ if (isset($_POST['search'])) {
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="text" name="search" id="search" placeholder="Search for a movie">
+        <input type="text" name="search" id="search" placeholder="Search for a year">
         <button type="submit">Search</button>
     </form>
     <div class="result">
         <h3>RESULTS</h3>
         <ul><?php
-            foreach ($movies as $movie){?>
-            <li><?= htmlspecialchars($movie['title']) ?></li><?php
+            foreach ($years as $year){?>
+            <li><?= htmlspecialchars($year['year']) ?></li><?php
         }?>           
         </ul>
     </div>
