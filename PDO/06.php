@@ -7,7 +7,7 @@ single select query and order by the characters table name column.
 The output should look like the snippet below.
 */
 $db = new PDO('sqlite:startrek.db');
-$statement = $db->query('SELECT characters.name, actors.name AS actor_name FROM characters INNER JOIN actors ON characters.actor_id = actors.id ORDER BY characters.name ASC LIMIT 5');
+$statement = $db->query('SELECT characters.name, actors.name AS actor_name FROM characters INNER JOIN actors ON characters.actor_id = actors.id ORDER BY characters.name DESC LIMIT 5');
 $characters = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?> 
 <div>
