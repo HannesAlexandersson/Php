@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    
+  }
+  
+  body {
+    display: flex;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'orbitron', sans-serif;
+    flex-direction: column;
+    background-color: 
+                        color-mix(in lch, rgb(243, 119, 243), rgb(255, 216, 192));
+    align-items: center;
+    justify-content: center;
+}
