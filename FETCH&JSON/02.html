@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <ul>
+    <script>// hämtar JSOn data från url
+       fetch('https://yrgo.github.io/api/movies/what-we-do-in-the-shadows.json')
+        .then((response) => response.json())
+        .then((actors) => {
+          actors.forEach((actor) => {//sparar datan i actors
+            const listItem = document.createElement('li');//skapa li element
+
+           
+            listItem.textContent = actor.name;//binder actor datan till li elementen
+
+            document.body.appendChild(listItem);// lägger till li elementen i body
+          });
+        });
+    </script>
+    </ul>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03</title>
+  </head>
+  <body>
+    <script>
+        fetch('vampires.php')
+            .then((response) => response.json())
+            .then((vampires) => {
+            vampires.forEach((vampire) => {
+                
+                /* const object = JSON.parse(vampire); Beh;ver inte parsa vampire eftersom datan redan har parsats i response enligt gpt */
+               
+            });
+            console.log(vampires);
+            });
+            </script>
+  </body>
+  </html>
+  
+  <!-- async function getJSON(url){
+      const myObject = await fetch('vampire.php');
+      const myText = await myObject.text();
+      myDisplay(myText);
+    
+  } -->
