@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 namespace App\Bank;
-use App\Bank\Exceptions\InvalidNameException;
+use App\Bank\InvalidNameException;
 
 class HormoneMonster
 {
